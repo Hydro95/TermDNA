@@ -19,7 +19,7 @@ def ch_colored(chara):
     return colored(chara, CHAR_MAP[chara]['color'])
 
 
-def get_link(chara):
+def ch_link(chara):
     return CHAR_MAP[chara]['links']
 
 
@@ -32,7 +32,7 @@ def gen_dna(length, mid=''):
     for _ in range(length):
         rand_ch = choice(chars)
         top += ch_colored(rand_ch)
-        bot += ch_colored(get_link(rand_ch))
+        bot += ch_colored(ch_link(rand_ch))
 
     return ''.join('{0}\n{1}\n{2}'.format(top, mid * length, bot))
 
